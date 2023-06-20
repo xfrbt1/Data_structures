@@ -24,11 +24,11 @@ link_list = [[1, 2, 1],
              ]
 
 graph = Graph(nodes)
+graph.new_node(9)
 
 graph.create_links(link_list)
 graph.print_all_nodes()
-graph.adj_matrix()
-# graph.ind_set()
+m = graph.adj_matrix()
+wm = graph.w_adj_matrix()
 
-# graph.ind_set()
 

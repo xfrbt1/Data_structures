@@ -19,7 +19,7 @@ class Graph:
     def check_adj(self, node1, node2):
         for i in self.VE_DICT[node1]:
             if i[0] == node2:
-                return 1
+                return i[1]
         else:
             return 0
 
@@ -39,8 +39,21 @@ class Graph:
                 index_j += 1
             index_i += 1
 
-        for i in matrix:
-            print(i)
+        return matrix
+
+    def w_adj_matrix(self):
+        matrix = [
+            [0 for i in range(len(self.VE_DICT))]
+            for j in range(len(self.VE_DICT))
+        ]
+
+        index_i = 0
+        for i in self.VE_DICT:
+            index_j = 0
+            for j in self.VE_DICT:
+                matrix[index_i][index_j] = self.check_adj(i, j)
+                index_j += 1
+            index_i += 1
 
         return matrix
 
