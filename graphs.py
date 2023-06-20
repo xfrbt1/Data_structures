@@ -24,10 +24,9 @@ class Graph:
             return 0
 
     def adj_matrix(self):
-
         matrix = [
-            [0 for i in range(len(self.VE_DICT))]
-            for j in range(len(self.VE_DICT))
+            [0 for i in self.VE_DICT]
+            for i in self.VE_DICT
         ]
 
         index_i = 0
@@ -41,10 +40,10 @@ class Graph:
 
         return matrix
 
-    def w_adj_matrix(self):
+    def weight_adj_matrix(self):
         matrix = [
-            [0 for i in range(len(self.VE_DICT))]
-            for j in range(len(self.VE_DICT))
+            [0 for i in self.VE_DICT]
+            for i in self.VE_DICT
         ]
 
         index_i = 0
@@ -57,26 +56,20 @@ class Graph:
 
         return matrix
 
-    def ind_set(self):
-        adj_matrix = self.adj_matrix()
-
-        ind_list = [
-            [n for n in self.VE_DICT]
-            for i in range(len(self.VE_DICT))
-        ]
-
-        # for i in range(len(ind_list)):
-        #     for j in range(len(ind_list)):
-        #         print(f'{ind_list[i][j]} {adj_matrix[i][j]} |', end=' ')
-        #     print(f"->{i}\n")
-
-        for i in range(len(ind_list)):
-            for j in range(len(ind_list)):
-                if adj_matrix[i][j] != 0:
-                    ind_list[i][j] = 'x'
-
-        for i in ind_list:
+    def print_wam(self):
+        for i in self.weight_adj_matrix():
             print(i)
+
+    def print_am(self):
+        for i in self.adj_matrix():
+            print(i)
+
+    def nodes_list(self):
+        nodes_list = [i for i in self.VE_DICT]
+        return nodes_list
+
+    def ind_set(self):
+        pass
 
     def max_ind_set(self):
         pass
