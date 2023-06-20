@@ -42,22 +42,22 @@ graph = nx.Graph(np.matrix(wm))
 print(nx.maximal_independent_set(graph))
 
 
-for i in range(len(wm)):
-    for j in range(len(wm)):
-        if wm[i][j] != 0:
-            graph.add_edge(i, j, weight=wm[i][j])
-
-pos = nx.spring_layout(graph, seed=5)
-nx.draw(graph, pos, with_labels=False, node_size=600)
-nx.draw_networkx_labels(graph, pos, font_size=22, font_family="sans-serif")
-
-edge_labels = dict([((u, v,), d['weight']) for u, v, d in graph.edges(data=True)])
-nx.draw_networkx_edges(
-    graph, pos,  alpha=1, edge_color="b", style="dashed"
-)
-nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
-
-plt.show()
+# for i in range(len(wm)):
+#     for j in range(len(wm)):
+#         if wm[i][j] != 0:
+#             graph.add_edge(i, j, weight=wm[i][j])
+#
+# pos = nx.spring_layout(graph, seed=5)
+# nx.draw(graph, pos, with_labels=False, node_size=600)
+# nx.draw_networkx_labels(graph, pos, font_size=22, font_family="sans-serif")
+#
+# edge_labels = dict([((u, v,), d['weight']) for u, v, d in graph.edges(data=True)])
+# nx.draw_networkx_edges(
+#     graph, pos,  alpha=1, edge_color="b", style="dashed"
+# )
+# nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
+#
+# plt.show()
 
 
 
