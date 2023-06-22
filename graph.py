@@ -6,6 +6,9 @@ class Graph:
         for node in self.nodes:
             self.VE_DICT[node] = list()
 
+    def __str__(self):
+        return f"{self.VE_DICT}"
+
     def new_node(self, node_name):
         if node_name not in self.VE_DICT:
             self.VE_DICT[node_name] = list()
