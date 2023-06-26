@@ -28,6 +28,35 @@ class Binary_tree:
             else:
                 self.bst_add(current=current.right, data=data)
 
+    def find_node(self, value):
+        node = self.root
+
+        while node is not None:
+            if node.data == value:
+                return node
+            if value > node.data:
+                if node.right is not None:
+                    node = node.right
+                else:
+                    return
+            if value < node.data:
+                if node.left is not None:
+                    node = node.left
+                else:
+                    return
+        return None
+
+    def DFS(self, node):
+        if node is None:
+            return
+
+        self.DFS(node.left)
+        print(f"[{node.data}]", end="")
+        self.DFS(node.right)
+
+    def BFS(self):
+        pass
+
 
 def print_tree_func(current_root, level):
     print(f"({current_root.data})")
@@ -59,6 +88,10 @@ def bst_add_func(root, data):
 
 def delete_node(root, data):
     pass
+
+
+
+
 
 
 
